@@ -1,0 +1,40 @@
+16:23:46 **** Build of configuration Debug for project Test_thutu_task ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:288:58: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  288 |         HAL_UART_Transmit(&huart1, (uint8_t*)start_task, strlen(start_task), HAL_MAX_DELAY);
+      |                                                          ^~~~~~
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:288:58: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  288 |         HAL_UART_Transmit(&huart1, (uint8_t*)start_task, strlen(start_task), HAL_MAX_DELAY);
+      |                                                          ^~~~~~
+../Core/Src/main.c:288:58: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: In function 'StartTask02':
+../Core/Src/main.c:311:60: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  311 |           HAL_UART_Transmit(&huart1, (uint8_t*)start_task, strlen(start_task), HAL_MAX_DELAY);
+      |                                                            ^~~~~~
+../Core/Src/main.c:311:60: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "Test_thutu_task.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\penta\Documents\stm32\Test_thutu_task\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test_thutu_task.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test_thutu_task.elf
+ 
+arm-none-eabi-size  Test_thutu_task.elf 
+arm-none-eabi-objdump -h -S Test_thutu_task.elf  > "Test_thutu_task.list"
+arm-none-eabi-objcopy  -O ihex Test_thutu_task.elf  "Test_thutu_task.hex"
+   text	   data	    bss	    dec	    hex	filename
+  22440	     96	   8680	  31216	   79f0	Test_thutu_task.elf
+arm-none-eabi-objcopy  -O binary Test_thutu_task.elf  "Test_thutu_task.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Test_thutu_task.list
+Finished building: Test_thutu_task.bin
+ 
+ 
+Finished building: Test_thutu_task.hex
+ 
+
+16:23:50 Build Finished. 0 errors, 3 warnings. (took 4s.108ms)
+

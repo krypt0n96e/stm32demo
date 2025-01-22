@@ -1,0 +1,7 @@
+../Core/Src/lcd1602.c:34:6:LCD1602_Write	1
+../Core/Src/lcd1602.c:24:6:LCD1602_Cmd	1
+../Core/Src/lcd1602.c:29:6:LCD1602_Data	1
+../Core/Src/lcd1602.c:44:6:LCD1602_print	2
+../Core/Src/lcd1602.c:50:6:LCD1602_setCursor	2
+../Core/Src/lcd1602.c:55:6:LCD1602_clear	1
+../Core/Src/lcd1602.c:6:6:LCD1602_Begin	1

@@ -1,0 +1,10 @@
+16:23:14 **** Build of configuration Debug for project SPI master ****
+make -j4 all 
+arm-none-eabi-size  SPI\ master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6040	     28	   1660	   7728	   1e30	SPI master.elf
+Finished building: default.size.stdout
+ 
+
+16:23:14 Build Finished. 0 errors, 0 warnings. (took 585ms)
+
